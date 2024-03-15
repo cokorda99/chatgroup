@@ -26,7 +26,7 @@ angular.module('app.menu', [])
 
         $scope.logout = function () {
             var confirmPopup = $ionicPopup.confirm({
-                title: 'Keluar Data Centre',
+                title: 'Keluar Chatgroup',
                 template: 'Apakah anda yakin akan keluar aplikasi?',
                 okType: 'button-positive'
             });

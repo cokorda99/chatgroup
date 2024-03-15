@@ -15,7 +15,7 @@ angular.module('app.berandaAdmin', [])
         console.log(useraktif.uid)
         $ionicLoading.hide();
         var dbRef = firebase.database();
-        var pengguna = dbRef.ref('dinas');
+        var pengguna = dbRef.ref('users');
         pengguna.child(useraktif.uid).on("value", function (snapshot) {
           console.log(snapshot.val());
           if (snapshot.val() != null) {
@@ -25,7 +25,7 @@ angular.module('app.berandaAdmin', [])
           } else {
             $ionicLoading.hide();
             console.log('TIDAK AKTIF');
-            // $state.go('welcome');
+            $state.go('welcome');
           }
 
         })
