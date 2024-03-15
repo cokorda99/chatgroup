@@ -1,36 +1,44 @@
-<ion-view title="Data Centre Guru" hide-nav-bar="true" cache-view="false" id="welcome">
-    <ion-content padding="false" class="manual-ios-statusbar-padding bg-gradient-blue" scroll="false">
-        <style>
-            #mainPage-heading1{
-                text-align: center;
-                font-size: 25px;
-                font-weight: bold;
-            }
-            .button-block{
-                width: 75%;
-                margin: auto;
-            }
-        </style>
-        <div class="spacer" style="height: 40px;"></div>
+<ion-view title="Login CHat" cache-view="false" id="page8" hide-nav-bar="true">
+    <ion-content padding="true">
         <div class="row responsive-md" style="margin: auto;">
             <div class="col col-50 col-offset-25">
                 <div>
-                    <img src="img/Lambang_Kabupaten_Buleleng.png"
-                        style="display: block; width: 40%; height: auto; margin-left: auto; margin-right: auto; ">
+                    <img src="img/ionic.png"
+                        style="display: block; width: 30%; height: auto; margin-left: auto; margin-right: auto; margin-bottom:20px; margin-top:50px">
                 </div>
-                <br>
-                <!-- <h1 id="mainPage-heading1" style="text-align:center; font-size: 25px;" class="text-white montserrat">Selamat Datang di</h1> -->
-                <h1 id="mainPage-heading1" class="text-white montserrat">Data Centre GTK</h1>
-                <h1 id="mainPage-heading1" class="text-white montserrat"> Disdikpora Kabupaten Buleleng</h1>
-                <div id="mainPage-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">
-                    <p style="padding: 17px;color:white">Data Centre Guru dan Tenaga Kependidikan Disdikpora Kabupaten Buleleng merupakan aplikasi mobile yang digunakan untuk memudahkan pendataan dan monitoring data guru dan tenaga kependidikan serta pegawai di Lingkungan Disdikpora Kabupaten Buleleng</p>
+                <div>
+                    <center>
+                        <h5 style="font-size: 20px;">Login Chat</h3>
+                            <h5>Silahkan Masukan Email & Password Akun Anda</h4>
+                    </center>
                 </div>
-                <a id="mainPage-button1" ng-click="login()" 
-                class="button button-light button-block" style="color: #00b5e4; border-radius: 100px;font-weight: bold;">Log in</a>
-                <!-- <a id="mainPage-button2" ng-click="registrasi()"
-                    class="button button-positive button-block button-outline btn-welcome"> Belum Punya Akun ? Daftar
-                    Sekarang</a> -->
+                <form name="myForm">
+                    <ion-list>
+                        <div class="spacer" style="height: 10px;"></div>
+                        <label class="item item-input" id="login-form">
+                            <ion-icon name="mail" class="placeholder-icon "></ion-icon>
+                            <input type="email" placeholder="Email" ng-model="formData.email" name="email"
+                                aria-placeholder="Email">
+                        </label>
+                        <small class="help-block"
+                            ng-show="myForm.email.$touched &amp;&amp; myForm.email.$invalid">Masukan Alamat Email yang
+                            benar</small>
+                        <label class="item item-input" style="margin-top:10px" id="login-form">
+                            <ion-icon name="key" class="placeholder-icon "></ion-icon>
+                            <input type="password" placeholder="Password" ng-model="formData.password">
+                        </label>
+                    </ion-list>
+                    <div style="margin-top: 5vh;">
+                        <center>
+                            <button ng-click="login()" class="button button-light button-block"
+                                style="border-radius: 100px;font-weight: bold; background-color: aqua;">Log in</button>
+                        </center>
+                    </div>
+
+
+                </form>
             </div>
         </div>
+
     </ion-content>
 </ion-view>
