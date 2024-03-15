@@ -1,6 +1,35 @@
-<ion-view title="Chat" id="berandaAdmin">
+<ion-view title="Room Chat" id="berandaAdmin">
   <ion-content padding="false" class="has-header">
     <div class="bg-gradient-blue" style="min-height: 35vh;">
+      <div class="chat-container">
+        <div class="chat-box">
+          <div class="message from-other-user">
+            <span class="user">User 2:</span>
+            <span class="text">Not much, just chilling.</span>
+          </div>
+          <div class="message from-other-user">
+            <span class="user">User 2:</span>
+            <span class="text">Not much, just chilling.</span>
+          </div>
+          <div class="message from-other-user">
+            <span class="user">User 2:</span>
+            <span class="text">Not much, just chilling.</span>
+          </div>
+          <div class="message from-user">
+            <span class="user">User 1:</span>
+            <span class="text">Hey, what's up?</span>
+          </div>
+          <div class="message from-other-user">
+            <span class="user">User 2:</span>
+            <span class="text">Not much, just chilling.</span>
+          </div>
+          <!-- More messages go here -->
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Type your message..." ng-model="formData.message">
+          <button ng-click="sendMessage()">Send</button>
+        </div>
+      </div>
     </div>
   </ion-content>
 </ion-view>

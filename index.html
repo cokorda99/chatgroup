@@ -54,6 +54,80 @@
   <script src="js/loadBalancing.js"></script>
 
 
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.chat-container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-box {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+.from-user {
+    text-align: right;
+}
+
+.from-other-user {
+    text-align: left;
+}
+
+.from-user .user {
+    color: #4CAF50;
+}
+
+.from-other-user .user {
+    color: #007bff;
+}
+.user {
+    font-weight: bold;
+}
+
+.input-box {
+    display: flex;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.input-box input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.input-box button {
+    padding: 8px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-box button:hover {
+    background-color: #45a049;
+}
+  </style>
+
+
 </head>
 <!-- oncontextmenu="return false" -->
 <body ng-app="app" animation="slide-left-right-ios7">
