@@ -1,0 +1,211 @@
+<ion-view title="Data Per Kecamatan" id="berandaAdmin" hide-back-button="false">
+  <ion-content padding="false">
+    <div class="bg-gradient-blue" style="min-height: 35vh;">
+      <ion-slides disable-side-menu-drag=""
+        options="{'loop': true,'initialSlide':0,'direction':horizontal,'speed':500,'autoplay':2000,'grabCursor':true}"
+        slider="slider1" delegate-handle="slider1" style="width:100%;height:200px;">
+        <ion-slide-page>
+          <div class="spacer" style="width: 320px; height: 0px;"></div>
+          <div class="row responsive-md" style="margin: auto;">
+            <div class="col col-50 col-offset-25">
+              <div class="row" style="margin: auto">
+                <div class="col col-50">
+                  <img src="img/pnsbackground.png" style="display: block; margin-left: auto; margin-right: auto;">
+                </div>
+                <div class="col col-50" style="padding-left: 10px">
+                  <h4 style="color:white;">DATA CENTER</h4>
+                  <div class="show-list-numbers-and-dots">
+                    <p style="color:white;font-size: 12px"><strong>Gudang Data Guru Se-Kabupaten Buleleng <br> Input dan
+                        Lihat Data Guru Dengan Mudah dan Cepat</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ion-slide-page>
+
+        <ion-slide-page>
+          <div class="spacer" style="width: 320px; height: 0px;"></div>
+          <div class="row responsive-md" style="margin: auto;">
+            <div class="col col-50 col-offset-25">
+              <div class="row" style="margin: auto">
+                <div class="col col-50">
+                  <img src="img/gurubackground.png" style="display: block; margin-left: auto; margin-right: auto;">
+                </div>
+                <div class="col col-50" style="padding-left: 10px">
+                  <h4 style="color:white;">DATA CENTER</h4>
+                  <div class="show-list-numbers-and-dots">
+                    <p style="color:white;font-size: 12px"><strong>Gudang Data Guru Se-Kabupaten Buleleng <br> Input dan
+                        Lihat Data Guru Dengan Mudah dan Cepat</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ion-slide-page>
+
+        <ion-slide-page>
+          <div class="spacer" style="width: 320px; height: 0px;"></div>
+          <div class="row responsive-md" style="margin: auto;">
+            <div class="col col-50 col-offset-25">
+              <div class="row" style="margin: auto">
+                <div class="col col-50">
+                  <img src="img/guru2.png" style="display: block; margin-left: auto; margin-right: auto;">
+                </div>
+                <div class="col col-50" style="padding-left: 10px">
+                  <h4 style="color:white;">DATA CENTER</h4>
+                  <div class="show-list-numbers-and-dots">
+                    <p style="color:white;font-size: 12px"><strong>Gudang Data Guru Se-Kabupaten Buleleng <br> Input dan
+                        Lihat Data Guru Dengan Mudah dan Cepat</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ion-slide-page>
+
+      </ion-slides>
+    </div>
+
+    <div class="bg-white bg-watermark" style="border-radius:25px 25px 0px 0px;padding-top:2%;position: relative;bottom: 5vh;">
+      <div class="desktop" style="margin-left:auto;margin-right:auto;">
+        <div class="card shadow-sm" style="border-radius: 15px;">
+          <ion-item class="item putih bar bar-positive">
+            <h3 class="text-center text-white">Data per-Kecamatan</h3>
+          </ion-item>
+          <div class="p-0 m-0">
+            <div class="">
+              <div class="table-responsive">
+                <table class="table ">
+                  <thead class="thead" style="color:blue">
+                    <tr>
+                      <th scope="col">Kecamatan</th>
+                      <!-- <th scope="col">PNSP</th> -->
+                      <th scope="col">Total</th>
+                      <th scope="col">Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Banjar</th>
+                      <!-- <td class="pnslaki">{{formData.pnspLaki}}</td> -->
+                      <td> {{formData.jmlhBanjar}}</td>
+                      <td>
+                        <button class="button button-icon-left button-small button-positive font-weight-bold"
+                          ng-click="lihatKecBanjar()">
+                          <i class="icon ion-eye"></i>
+                          Lihat
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Buleleng</th>
+                      <!-- <td class="pnsperempuan">{{formData.pnspPerempuan}}</td> -->
+                      <td> {{formData.jmlhBuleleng}}</td>
+                      <td>
+                        <button class="button button-icon-left button-small button-positive font-weight-bold"
+                          ng-click="lihatKecBuleleng()">
+                          <i class="icon ion-eye"></i>
+                          Lihat
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Busungbiu</th>
+                      <!-- <td class="pnsperempuan">{{formData.pnspPerempuan}}</td> -->
+                      <td> {{formData.jmlhBusungbiu}}</td>
+                      <td>
+                        <button class="button button-icon-left button-small button-positive font-weight-bold"
+                          ng-click="lihatKecBusungbiu()">
+                          <i class="icon ion-eye"></i>
+                          Lihat
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Gerokgak</th>
+                      <!-- <td class="pnsperempuan">{{formData.pnspPerempuan}}</td> -->
+                      <td> {{formData.jmlhGerokgak}}</td>
+                      <td>
+                        <button class="button button-icon-left button-small button-positive font-weight-bold"
+                          ng-click="lihatKecGerokgak()">
+                          <i class="icon ion-eye"></i>
+                          Lihat
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Kubutambahan</th>
+                      <!-- <td class="pnsperempuan">{{formData.pnspPerempuan}}</td> -->
+                      <td> {{formData.jmlhKubutambahan}}</td>
+                      <td>
+                        <button class="button button-icon-left button-small button-positive font-weight-bold"
+                          ng-click="lihatKecKubutambahan()">
+                          <i class="icon ion-eye"></i>
+                          Lihat
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Sawan</th>
+                      <!-- <td class="pnsperempuan">{{formData.pnspPerempuan}}</td> -->
+                      <td> {{formData.jmlhSawan}}</td>
+                      <td>
+                        <button class="button button-icon-left button-small button-positive font-weight-bold"
+                          ng-click="lihatKecSawan()">
+                          <i class="icon ion-eye"></i>
+                          Lihat
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Seririt</th>
+                      <!-- <td class="pnsperempuan">{{formData.pnspPerempuan}}</td> -->
+                      <td> {{formData.jmlhSeririt}}</td>
+                      <td>
+                        <button class="button button-icon-left button-small button-positive font-weight-bold"
+                          ng-click="lihatKecSeririt()">
+                          <i class="icon ion-eye"></i>
+                          Lihat
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Sukasada</th>
+                      <!-- <td class="pnsperempuan">{{formData.pnspPerempuan}}</td> -->
+                      <td> {{formData.jmlhSukasada}}</td>
+                      <td>
+                        <button class="button button-icon-left button-small button-positive font-weight-bold"
+                          ng-click="lihatKecSukasada()">
+                          <i class="icon ion-eye"></i>
+                          Lihat
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Tejakula</th>
+                      <!-- <td class="pnsperempuan">{{formData.pnspPerempuan}}</td> -->
+                      <td> {{formData.jmlhTejakula}}</td>
+                      <td>
+                        <button class="button button-icon-left button-small button-positive font-weight-bold"
+                          ng-click="lihatKecTejakula()">
+                          <i class="icon ion-eye"></i>
+                          Lihat
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

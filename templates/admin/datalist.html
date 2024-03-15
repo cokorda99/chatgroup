@@ -1,0 +1,121 @@
+<ion-view title="Data GTK" id="berandaAdmin">
+    <ion-content padding="false" >
+        <div class="bg-gradient-blue" style="min-height: 35vh;">
+            <ion-slides disable-side-menu-drag=""
+            options="{'loop': true,'initialSlide':0,'direction':horizontal,'speed':500,'autoplay':2000,'grabCursor':true}"
+            slider="slider1" delegate-handle="slider1" style="width:100%;height:200px;" >
+            <ion-slide-page>
+                <div class="spacer" style="width: 320px; height: 0px;"></div>
+                <div class="row responsive-md" style="margin: auto;">
+                    <div class="col col-50 col-offset-25">
+                        <div class="row" style="margin: auto">
+                            <div class="col col-50">
+                                <img src="img/pnsbackground.png"
+                                    style="display: block; margin-left: auto; margin-right: auto;">
+                            </div>
+                            <div class="col col-50" style="padding-left: 10px">
+                                <h3 style="color:white;">DATA CENTER</h3>
+                                <div class="show-list-numbers-and-dots">
+                                    <p style="color:white;font-size: 12px"><strong>Gudang Data Guru Se-Kabupaten
+                                            Buleleng <br> Input dan
+                                            Lihat Data Guru Dengan Mudah dan Cepat</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </ion-slide-page>
+
+            <ion-slide-page>
+                <div class="spacer" style="width: 320px; height: 0px;"></div>
+                <div class="row responsive-md" style="margin: auto;">
+                    <div class="col col-50 col-offset-25">
+                        <div class="row" style="margin: auto">
+                            <div class="col col-50">
+                                <img src="img/gurubackground.png"
+                                    style="display: block; margin-left: auto; margin-right: auto;">
+                            </div>
+                            <div class="col col-50" style="padding-left: 10px">
+                                <h3 style="color:white;">DATA CENTER</h3>
+                                <div class="show-list-numbers-and-dots">
+                                    <p style="color:white;font-size: 12px"><strong>Gudang Data Guru Se-Kabupaten
+                                            Buleleng <br> Input dan
+                                            Lihat Data Guru Dengan Mudah dan Cepat</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-slide-page>
+
+            <ion-slide-page>
+                <div class="spacer" style="width: 320px; height: 0px;"></div>
+                <div class="row responsive-md" style="margin: auto;">
+                    <div class="col col-50 col-offset-25">
+                        <div class="row" style="margin: auto">
+                            <div class="col col-50">
+                                <img src="img/guru2.png" style="display: block; margin-left: auto; margin-right: auto;">
+                            </div>
+                            <div class="col col-50" style="padding-left: 10px">
+                                <h3 style="color:white;">DATA CENTER</h3>
+                                <div class="show-list-numbers-and-dots">
+                                    <p style="color:white;font-size: 12px"><strong>Gudang Data Guru Se-Kabupaten
+                                            Buleleng <br> Input dan
+                                            Lihat Data Guru Dengan Mudah dan Cepat</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-slide-page>
+
+        </ion-slides>
+        </div>
+
+        <div class="bg-white" style="width: 100vw;border-radius:25px 25px 0px 0px;padding-top:2%;position: relative;bottom: 5vh;">
+            <div>
+                <div style="margin-left:auto;margin-right:auto;padding-left: 0.7%;padding-right: 0.6%;">
+                    <div class="col">
+                        <div class="btn-group " style="width: 100%;">
+                            <select class="form-control" ng-model="formData.filterKecamatan" ng-change="selectKecamatan()">
+                                <option value="-">Pilih Kecamatan</option>
+                                <option ng-repeat="data in dataKec | filter:searchData | orderBy:'sekolah'"
+                                    value="{{data.id}}">
+                                    {{data.nama}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <label class="item item-input shadow-sm h-70" id="home-search1">
+                        <i class="icon ion-search placeholder-icon"></i>
+                        <input type="search" placeholder="Cari Data" ng-model="searchData">
+                    </label>
+                    <ion-list>
+                        <ion-item class="item-avatar item-icon-right shadow-sm h-70" id="home-list-item4"
+                            ng-repeat="data in dataGuru | filter:searchData | orderBy:nama" ng-click="detailGuru(data)">
+                            <img src="img/mudapns.png">
+                            <h3><span style="color:blue">{{$index+1}}. {{data.nama}}</span></h3>
+                            <p style="white-space:normal;">NIK. {{data.nik}}<br>
+                                <!-- Tahun Ajaran. {{data.tahunAjaran}}<br>
+                            Kelas. {{data.namaKelas}}<br>
+                            {{data.namaKotaKabupaten}}, {{data.namaProvinsi}}<br>
+                            <em><small>{{data.tanggalDisplay}}, {{data.jamDisplay}}</small></em> -->
+                            </p>
+
+                            <i class="icon ion-ios-arrow-right icon-accessory"></i>
+                        </ion-item>
+                    </ion-list>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+    <ion-footer-bar align-title="left" class="bar-light">
+        <!-- <button class="button button-clear pull-left">Jumlah GTK</button> -->
+        <button class="button button-positive pull-right">Total :
+            <strong>{{formData.totalGtk}}</strong> Orang</button>
+    </ion-footer-bar>
+</ion-view>

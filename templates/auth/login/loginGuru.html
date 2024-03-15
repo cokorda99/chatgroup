@@ -1,0 +1,55 @@
+<ion-view title="Log in Guru & Tenaga Kependidikan" cache-view="false" id="page8" hide-nav-bar="true">
+  <ion-content padding="true" class="bg-gradient-blue">
+    <div class="row responsive-md" style="margin: auto;">
+      <div class="col col-50 col-offset-25">
+        <div>
+          <img src="img/Lambang_Kabupaten_Buleleng.png"
+            style="display: block; width: 50%; height: auto; margin-left: auto; margin-right: auto; margin-bottom:20px; margin-top:30px">
+        </div>
+        <div>
+          <center>
+            <h5 class="text-white montserrat">Log In Guru & Tenaga Kependidikan</h3>
+              <h5 class="text-white montserrat">Silahkan Masukan NIK & Password Anda</h4>
+          </center>
+        </div>
+        <form class="list" name="myForm">
+          <ion-list>
+
+            <label class="item item-input" id="login-form">
+              <ion-icon name="person" class="placeholder-icon text-white"></ion-icon>
+              <input type="number" placeholder="NIK" ng-model="formData.nik" name="nik" aria-placeholder="NIK"
+                class="text-white montserrat">
+            </label>
+            <small class="help-block" ng-show="myForm.email.$touched &amp;&amp; myForm.email.$invalid">Masukan NIK yang
+              benar</small>
+            <label class="item item-input" style="margin-top:10px" id="login-form">
+              <ion-icon name="key" class="placeholder-icon text-white"></ion-icon>
+              <input type="password" placeholder="Password" ng-model="formData.password" class="text-white montserrat">
+            </label>
+            <!-- <label class="item item-input item-select" id="login-form" style="margin-top:10px">
+              <ion-icon name="map" class="placeholder-icon text-white"></ion-icon>
+              <span class="input-label text-white">Kecamatan</span>
+              <select id="select" ng-model="formData.id_kec">
+                <option style="color:black"ng-repeat="data in dataKecamatan | orderBy:'nama'"
+                  value="{{data.id}}">{{data.nama}}</option>
+              </select>
+            </label> -->
+
+
+            <div class="spacer" style="height: 10px;"></div>
+          </ion-list>
+
+          <button ng-click="login()" class="button button-light button-block"
+            style="border-radius: 100px;color: #00b5e4;font-weight: bold;">Log in</button>
+          <button ng-click="kembali()" class="button button-outline button-light button-block"
+            style="border-radius: 100px;color:white;font-weight: bold;">Kembali</button>
+          <a ng-click="registrasi()" class="button button-block button-clear" style="color:white">Belum Registrasi? Klik
+            Disini
+          </a>
+
+        </form>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

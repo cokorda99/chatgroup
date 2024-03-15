@@ -1,0 +1,41 @@
+<ion-view title="Edit Profil" id="berandaGuru">
+    <ion-content padding="false">
+      <center>
+        <div class="bg-gradient-blue" style="min-height: 38vh;">
+          <img src="img/logo.png" ng-if="fotoProfil === false" style="width:100px;padding-top:15px;">
+          <img src="{{fotoProfilUrl}}" ng-if="fotoProfil === true">
+          <h3 style="color:white;font-size:20px">{{formData.nama}}</h3>
+          <p style="color:white;padding-bottom:15px">{{formData.nik}}</p>
+        </div>
+      </center>
+      <div class="bg-white bg-watermark" style="border-radius: 25px 25px 0px 0px;position: relative;bottom: 4vh; min-height: 50vh;">
+        <div style="position: relative; z-index: 1;bottom: 0vh;">
+          <div class="desktop" style="padding:10px">
+            <!-- <center>
+              <div style="margin-top:10vh">
+                <h2 style="text-align: center; color: black;">Selamat Datang</h2>
+                <p style="text-align: center; color: black;">
+                  Terimakasih Sudah Mendaftar di Aplikasi Data Centre GTK Dinas Pendidikan Pemuda dan Olahraga Buleleng. Data
+                  diri dan data kepegawaian anda kini sudah tersimpan di Database Kepegawaian Dinas Pendidikan Pemuda dan
+                  Olahraga Kabupaten Buleleng
+                </p>
+              </div>
+            </center>
+   -->
+          </div>
+          <div class="desktop" style="margin-left: auto; margin-right: auto;padding-left: 4.3%;padding-right: 4.3%;">
+            <button class="button button-positive ion-android-contact button-block" ui-sref="menuGuru.editprofilGuru()">
+              Edit Profil
+            </button>
+            <button class="button button-positive button-outline ion-android-archive button-block" style="background-color: white;" ui-sref="menuGuru.editPasswordGuru()">
+              Edit Password
+            </button>
+          </div>
+        </div>
+      </div>
+  
+  
+  
+    </ion-content>
+  </ion-view>
+  

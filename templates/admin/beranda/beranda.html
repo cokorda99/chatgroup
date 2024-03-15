@@ -1,0 +1,166 @@
+<ion-view title="Beranda Admin" id="berandaAdmin">
+  <ion-content padding="false" class="has-header">
+    <div class="bg-gradient-blue" style="min-height: 35vh;">
+      <ion-slides disable-side-menu-drag=""
+      options="{'loop': true,'initialSlide':0,'direction':horizontal,'speed':500,'autoplay':2000,'grabCursor':true}"
+      slider="slider1" delegate-handle="slider1" style="width:100%;height:200px;">
+      <ion-slide-page>
+        <div class="spacer" style="width: 320px; height: 0px;"></div>
+        <div class="row responsive-md" style="margin: auto;">
+          <div class="col col-50 col-offset-25">
+            <div class="row" style="margin: auto">
+              <div class="col col-50">
+                <img src="img/pnsbackground.png" style="display: block; margin-left: auto; margin-right: auto;">
+              </div>
+              <div class="col col-50" style="padding-left: 10px">
+                <h4 style="color:white;">DATA CENTER</h4>
+                <div class="show-list-numbers-and-dots">
+                  <p style="color:white;font-size: 12px"><strong>Gudang Data Guru Se-Kabupaten Buleleng <br> Input dan
+                      Lihat Data Guru Dengan Mudah dan Cepat</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </ion-slide-page>
+
+      <ion-slide-page>
+        <div class="spacer" style="width: 320px; height: 0px;"></div>
+        <div class="row responsive-md" style="margin: auto;">
+          <div class="col col-50 col-offset-25">
+            <div class="row" style="margin: auto">
+              <div class="col col-50">
+                <img src="img/gurubackground.png" style="display: block; margin-left: auto; margin-right: auto;">
+              </div>
+              <div class="col col-50" style="padding-left: 10px">
+                <h4 style="color:white;">DATA CENTER</h4>
+                <div class="show-list-numbers-and-dots">
+                  <p style="color:white;font-size: 12px"><strong>Gudang Data Guru Se-Kabupaten Buleleng <br> Input dan
+                      Lihat Data Guru Dengan Mudah dan Cepat</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-slide-page>
+
+      <ion-slide-page>
+        <div class="spacer" style="width: 320px; height: 0px;"></div>
+        <div class="row responsive-md" style="margin: auto;">
+          <div class="col col-50 col-offset-25">
+            <div class="row" style="margin: auto">
+              <div class="col col-50">
+                <img src="img/guru2.png" style="display: block; margin-left: auto; margin-right: auto;">
+              </div>
+              <div class="col col-50" style="padding-left: 10px">
+                <h4 style="color:white;">DATA CENTER</h4>
+                <div class="show-list-numbers-and-dots">
+                  <p style="color:white;font-size: 12px"><strong>Gudang Data Guru Se-Kabupaten Buleleng <br> Input dan
+                      Lihat Data Guru Dengan Mudah dan Cepat</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-slide-page>
+
+    </ion-slides>
+    </div>
+
+    <div class="bg-white bg-watermark" style="border-radius:25px 25px 0px 0px;padding-top:2%;position: relative;bottom:5vh">
+      <div class="row responsive-md" style="margin: auto;">
+        <div class="col col-50 col-offset-25">
+          <div class="container row responsive-md">
+            <div class="col col-50" style="padding-bottom: 0;padding-top: 0;margin-bottom: 0;margin-top:0;">
+              <div class="row" style="margin-left: auto;margin-right: auto;">
+                <div class="col col-50" style="height: 20vh;margin:0">
+                  <div class="card bg-gradient-blue" style="height: 100%;" ng-click="lihatdataPokok()">
+                    <center>
+                      <div class="vertical-center">
+                        <img src="../../../img/data.png" class="icon-btn" />
+                        <h5 class="text-white text-center">Data Pokok Per Kecamatan</h5>
+                      </div>
+                    </center>
+
+                  </div>
+                </div>
+                <div class="col col-50" style="height: 20vh;margin:0">
+                  <div class="card bg-gradient-blue" style="height: 100%;" ng-click="lihatdataPegawaiDinas()">
+                    <center>
+                      <div class="vertical-center">
+                        <img src="../../../img/employees.png" class="icon-btn" />
+                        <h5 class="text-white text-center">Data Pegawai Disdikpora</h5>
+                      </div>
+                    </center>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col col-50" style="padding-bottom: 0;padding-top: 0;margin-bottom: 0;margin-top:0;">
+              <div class="row" style="margin-left: auto;margin-right: auto;">
+                <div class="col col-50" style="height: 20vh;margin:0">
+                  <div class="card bg-gradient-blue" style="height: 100%;" ng-click="lihatdataGuru()">
+                    <center>
+                      <div class="vertical-center">
+                        <img src="../../../img/teacher.png" class="icon-btn" />
+                        <h5 class="text-white text-center">Data Guru Kab Buleleng</h5>
+                      </div>
+                    </center>
+                  </div>
+                </div>
+                <div class="col col-50" style="height: 20vh;margin:0">
+                  <div class="card bg-gradient-blue" style="height: 100%;" ng-click="lihatdataPegawaiSekolah()">
+                    <center>
+                      <div class="vertical-center">
+                        <img src="../../../img/male.png" class="icon-btn" />
+                        <h5 class="text-white text-center">Data Pegawai Sekolah</h5>
+                      </div>
+                    </center>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col col-50" style="padding-bottom: 0;padding-top: 0;margin-bottom: 0;margin-top:0;">
+              <div class="row" style="margin-left: auto;margin-right: auto;">
+                <div class="col col-50" style="height: 20vh;margin:0">
+                  <div class="card bg-gradient-blue" style="height: 100%;" ng-click="lihatdataPensiun()">
+                    <center>
+                      <div class="vertical-center">
+                        <img src="../../../img/retired.png" class="icon-btn" />
+                        <h5 class="text-white text-center">Data Pensiun</h5>
+                      </div>
+                    </center>
+                  </div>
+                </div>
+                <div class="col col-50" style="height: 20vh;margin:0">
+                </div>
+
+              </div>
+            </div>
+            <div class="col col-50" style="padding-bottom: 0;padding-top: 0;margin-bottom: 0;margin-top:0;">
+              <div class="row" style="margin-left: auto;margin-right: auto;">
+                <div class="col col-50" style="height: 20vh;margin:0">
+                </div>
+                <div class="col col-50" style="height: 20vh;margin:0">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="center" style="justify-content: center; align-items: center; display: flex;">
+              <button ng-click="updateData()" class="button button-positive">
+                Update Data
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </ion-content>
+</ion-view>

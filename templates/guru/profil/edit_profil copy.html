@@ -1,0 +1,415 @@
+<ion-view title="Edit Profil" cache-view="false" id="page8" class="bg-latar">
+    <ion-content padding="false" class="bg-latar">
+        <div class="row responsive-md" style="margin: auto;">
+            <div class="col col-50 col-offset-25">
+                <div class="list card" style="padding:5%;border-radius:10px">
+                    <div class="" >
+                        <img src="img/logo.png" class="avatar" ng-if="fotoProfil === false" style="height: 10%;">
+                        <img src="{{fotoProfilUrl}}" class="avatar" ng-if="fotoProfil === true" style="height: 10%;">
+                        <br>
+                        <!-- <h4 style="text-align: center;color:black;">{{formData.nama}}</h4> -->
+                        <!-- <button ng-click="registrasi()" class="button button-balanced button-block">Registrasi</button> -->
+                        <center>
+                            <input type="file" id="inputFotoProfil">
+                        </center>
+
+                        <br>
+                        <button class="button button-positive"
+                        style="width: 200px; display: block; margin-left: auto;margin-right: auto;" ng-click="UploadFotoProfil()">Upload
+                    </div>
+
+                </div>
+                <form class="list shadow-sm" name="myForm">
+                    <ion-list>
+                        <ion-item class="item-divider bar bar-positive" id="registrasi-list-item-divider1"> Data Diri
+                        </ion-item>
+                        <label class="item item-input item-floating-label input" id="registrasi-input7">
+                            <span class="input-label">
+                                <p>Nama Lengkap</p>
+                            </span>
+                            <input type="text" placeholder="Nama Lengkap" ng-model="formData.nama" style="color: black;">
+                        </label>
+                        <label class="item item-select" id="registrasi-select8">
+                            <span class="input-label">
+                                <p>Jenis Kelamin</p>
+                            </span>
+                            <select ng-model="formData.jenis_kelamin">
+                                <option>Laki-laki</option>
+                                <option>Perempuan</option>
+                            </select>
+                        </label>
+                        <label class="item item-input item-floating-label input" id="registrasi-input7">
+                            <span class="input-label">
+                                <p>NIK</p>
+                            </span>
+                            <input type="tel" placeholder="NIK" ng-model="formData.nik" readonly>
+                        </label>
+                        <label class="item item-input item-floating-label input" id="registrasi-input7">
+                            <span class="input-label">
+                                <p>Tanggal Lahir</p>
+                            </span>
+                            <input type="text" placeholder="Tempat Tanggal Lahir" ng-model="formData.tanggal_lahir" readonly>
+                        </label>
+
+                        <label class="item item-select" id="registrasi-select8">
+                            <span class="input-label">
+                                <p>Agama</p>
+                            </span>
+                            <select ng-model="formData.agama">
+                                <option>Hindu</option>
+                                <option>Islam</option>
+                                <option>Katholik</option>
+                                <option>Protestan</option>
+                                <option>Buddha</option>
+                                <option>Kong Hu Cu</option>
+                            </select>
+                        </label>
+                        <label class="item item-input" id="registrasi-textarea1">
+                            <span class="input-label">
+                                <p>Alamat</p>
+                            </span><textarea placeholder="" ng-model="formData.alamat"></textarea>
+                        </label>
+
+                        <label class="item item-input item-floating-label input" id="registrasi-input7">
+                            <span class="input-label">
+                                <p>No Hp</p>
+                            </span>
+                            <input type="text" placeholder="No Hp" ng-model="formData.nohp">
+                        </label>
+                        <div class="spacer" style="height: 10px;"></div>
+                        <ion-item class="item-divider bar bar-positive" id="registrasi-list-item-divider1">Data Kepegawaian</ion-item>
+
+                        <label class="item item-select" id="registrasi-select8">
+                            <span class="input-label">
+                                <p>Status Kepegawaian</p>
+                            </span>
+                            <select ng-model="formData.status_kepegawaian" ng-change="getStatusPegawai()">
+                                <option value="pnsp">PNSP</option>
+                                <option value="pnsd">PNSD</option>
+                                <option value="honorer">Honorer</option>
+                                <option value="kontrak">Kontrak</option>
+                                <option value="pppk">PPPK</option>
+                            </select>
+                        </label>
+
+                        <label class="item item-input item-floating-label input" id="registrasi-input7" ng-show="statusnip">
+                            <span class="input-label">
+                                <p>NIP</p>
+                            </span>
+                            <input type="tel" placeholder="NIP" ng-model="formData.nip">
+                        </label>
+
+                        <label class="item item-input item-floating-label input" id="registrasi-input6">
+                            <span class="input-label">
+                                <p>Pendidikan Terakhir</p>
+                            </span>
+                            <input type="text" placeholder="Pendidikan Terakhir" ng-model="formData.pendidikan_terakhir">
+                        </label>
+
+                        <label class="item item-input item-floating-label input" id="registrasi-input7" ng-show="statusnip">
+                            <span class="input-label">
+                                <p>Pangkat Terakhir</p>
+                            </span>
+                            <input type="text" placeholder="Pangkat Tereakhir" ng-model="formData.pangkat_terakhir">
+                        </label>
+
+                        <label class="item item-input item-floating-label input" id="registrasi-input7" ng-show="statusnip">
+                            <span class="input-label">
+                                <p>Nilai PAK Terakhir</p>
+                            </span>
+                            <input type="tel" placeholder="Nilai PAK Terakhir" ng-model="formData.nilai_pak">
+                        </label>
+                        <div class="spacer" style="height: 10px;"></div>
+                        <ion-item class="item-divider bar bar-positive" id="registrasi-list-item-divider1">Tempat Tugas</ion-item>
+                        <label class="item item-select">
+                            <span class="input-label">
+                                <p>Kecamatan</p>
+                            </span>
+                            <select ng-model="formData.id_kec" ng-change="getIdKecamatan()">
+                                <option ng-repeat="data in dataKecamatan | orderBy:'nama'" value="{{data.id}}">
+                                {{data.nama}}
+                                </option>
+                            </select>
+                        </label>
+                        <label class="item item-select" id="registrasi-jenistempat">
+                            <span class="input-label">
+                                <p>Jenis Tempat Tugas</p>
+                            </span>
+                            <select  ng-model="formData.jenis_tempatTugas" ng-change="getJenistempatTugas()">
+                                <option value="Sekolah">Sekolah</option>
+                                <option value="Disdikpora">Disdikpora</option>
+                            </select>
+                        </label>
+                        <label class="item item-select" id="registrasi-select8" ng-show="jenjang">
+                            <span class="input-label">
+                                <p>Jenjang</p>
+                            </span>
+                            <select ng-model="formData.jenjangSekolah" ng-change="getJenjangSekolah()">
+                                <option value="PAUD/TK">PAUD/TK</option>
+                                <option value="SD">SD</option>
+                                <option value="SMP">SMP</option>
+                                <option value="SNPF SKB">SPNF SKB</option>
+                                <option value="PKBM">PKBM</option>
+                            </select>
+                        </label>
+                        <label class="item item-select" id="registrasi-select8" ng-show="jenjang">
+                            <span class="input-label">
+                                <p>Status Sekolah</p>
+                            </span>
+                            <select ng-model="formData.statusSekolah">
+                                <option value="NEGERI">Negeri</option>
+                                <option value="SWASTA">Swasta</option>
+                            </select>
+                        </label>
+                        <label class="item item-select" id="registrasi-select9">
+                            <span class="input-label">
+                                <p>Tempat Tugas</p>
+                            </span>
+                            <select ng-model="formData.idTempatTugas">
+                                <option ng-repeat="data in dataSekolah | orderBy:'sekolah'" value="{{data.id_sekolah}}">
+                                    {{data.sekolah}}</option>
+                                <option value="Disdikpora Kab Buleleng">Disdikpora Kab Buleleng</option>
+                            </select>
+                        </label>
+                        <label class="item item-select" id="registrasi-select10">
+                            <span class="input-label">
+                                <p>Status Jabatan</p>
+                            </span>
+                            <select ng-model="formData.status_jabatan">
+                                <!-- Satuan Pendidikan -->
+                                <option ng-show="pejabatsekolah">Pengawas Sekolah</option>
+                                <option ng-show="pejabatsekolah">Kepala Sekolah</option>
+                                <option ng-show="pejabatsekolah">Guru</option>
+                                <option ng-show="pejabatsekolah">Tenaga Administrasi</option>
+                                <option ng-show="pejabatsekolah">Laboran</option>
+                                <option ng-show="pejabatsekolah">Pustakawan</option>
+                                <option ng-show="pejabatsekolah">Tenaga Lainnya</option>
+                                <!-- Korwil -->
+                                <option ng-show="jabatanKorwil">Pengawas Sekolah</option>
+                                <option ng-show="jabatanKorwil">ASN Lainnya</option>
+                                <!-- Disdikpora -->
+                                <option ng-show="pegawaidisdik">Struktural Eselon II</option>
+                                <option ng-show="pegawaidisdik">Struktural Eselon III</option>
+                                <option ng-show="pegawaidisdik">Struktural Eselon IV</option>
+                                <option ng-show="pegawaidisdik">Pengawas SD</option>
+                                <option ng-show="pegawaidisdik">Pengawas SMP</option>
+                                <option ng-show="pegawaidisdik">Penilik PAUD/TK</option>
+                                <option ng-show="pegawaidisdik">Penilik PNF</option>
+                                <option ng-show="pegawaidisdik">Pamong</option>
+                                <option ng-show="pegawaidisdik">Tatausaha</option>
+                                <option ng-show="pegawaidisdik">Fungsional Umum</option>
+                                <option ng-show="pegawaidisdik">Laboran</option>
+                                <option ng-show="pegawaidisdik">Pustakawan</option>
+                                <option ng-show="pegawaidisdik">Lain - lain</option>
+                            </select>
+                        </label>
+                        <div class="spacer" style="height: 10px;"></div>
+                    </ion-list>
+
+                    <button ng-click="simpan()" class="button button-balanced button-block">Simpan</button>
+                </form>
+
+                <form class="list" name="myForm">
+                    <div class="list card" style="border-radius:15px">
+                        <div class="item item-divider bar bar-positive" id="registrasi-list-item-divider1" >
+                            Data Diri
+                          </div>
+                          <div class="list">
+                            <label class="item item-input item-floating-label input" id="registrasi-input7">
+                                <span class="input-label">
+                                    <p>Nama Lengkap</p>
+                                </span>
+                                <input type="text" placeholder="Nama Lengkap" ng-model="formData.nama" style="color: black;">
+                            </label>
+                            <label class="item item-select" id="registrasi-select8">
+                                <span class="input-label">
+                                    <p>Jenis Kelamin</p>
+                                </span>
+                                <select ng-model="formData.jenis_kelamin">
+                                    <option>Laki-laki</option>
+                                    <option>Perempuan</option>
+                                </select>
+                            </label>
+                            <label class="item item-input item-floating-label input" id="registrasi-input7">
+                                <span class="input-label">
+                                    <p>NIK</p>
+                                </span>
+                                <input type="tel" placeholder="NIK" ng-model="formData.nik" readonly>
+                            </label>
+                            <label class="item item-input item-floating-label input" id="registrasi-input7">
+                                <span class="input-label">
+                                    <p>Tanggal Lahir</p>
+                                </span>
+                                <input type="text" placeholder="Tempat Tanggal Lahir" ng-model="formData.tanggal_lahir" readonly>
+                            </label>
+                            <label class="item item-select" id="registrasi-select8">
+                                <span class="input-label">
+                                    <p>Agama</p>
+                                </span>
+                                <select ng-model="formData.agama">
+                                    <option>Hindu</option>
+                                    <option>Islam</option>
+                                    <option>Katholik</option>
+                                    <option>Protestan</option>
+                                    <option>Buddha</option>
+                                    <option>Kong Hu Cu</option>
+                                </select>
+                            </label>
+                            
+                            <label class="item item-input" id="registrasi-textarea1">
+                                <span class="input-label">
+                                    <p>Alamat</p>
+                                </span><textarea placeholder="" ng-model="formData.alamat"></textarea>
+                            </label>
+                            <label class="item item-input item-floating-label input" id="registrasi-input7">
+                                <span class="input-label">
+                                    <p>No Hp</p>
+                                </span>
+                                <input type="text" placeholder="No Hp" ng-model="formData.nohp">
+                            </label>
+                          </div>
+                    </div>
+                    <div class="list card" style="border-radius:15px">
+                        <div class="item item-divider bar bar-positive" id="registrasi-list-item-divider1" >
+                            Data Kepegawaian
+                          </div>
+                          <div class="list">
+                            <label class="item item-select" id="registrasi-select8">
+                                <span class="input-label">
+                                    <p>Status Kepegawaian</p>
+                                </span>
+                                <select ng-model="formData.status_kepegawaian" ng-change="getStatusPegawai()">
+                                    <option value="pnsp">PNSP</option>
+                                    <option value="pnsd">PNSD</option>
+                                    <option value="honorer">Honorer</option>
+                                    <option value="kontrak">Kontrak</option>
+                                    <option value="pppk">PPPK</option>
+                                </select>
+                            </label>
+    
+                            <label class="item item-input item-floating-label input" id="registrasi-input7" ng-show="statusnip">
+                                <span class="input-label">
+                                    <p>NIP</p>
+                                </span>
+                                <input type="tel" placeholder="NIP" ng-model="formData.nip">
+                            </label>
+    
+                            <label class="item item-input item-floating-label input" id="registrasi-input6">
+                                <span class="input-label">
+                                    <p>Pendidikan Terakhir</p>
+                                </span>
+                                <input type="text" placeholder="Pendidikan Terakhir" ng-model="formData.pendidikan_terakhir">
+                            </label>
+    
+                            <label class="item item-input item-floating-label input" id="registrasi-input7" ng-show="statusnip">
+                                <span class="input-label">
+                                    <p>Pangkat Terakhir</p>
+                                </span>
+                                <input type="text" placeholder="Pangkat Tereakhir" ng-model="formData.pangkat_terakhir">
+                            </label>
+    
+                            <label class="item item-input item-floating-label input" id="registrasi-input7" ng-show="statusnip">
+                                <span class="input-label">
+                                    <p>Nilai PAK Terakhir</p>
+                                </span>
+                                <input type="tel" placeholder="Nilai PAK Terakhir" ng-model="formData.nilai_pak">
+                            </label>
+                          </div>
+                    </div>
+                    <div class="list card" style="border-radius:15px">
+                        <div class="item item-divider bar bar-positive" id="registrasi-list-item-divider1" >
+                            Tempat Tugas
+                          </div>
+                          <div class="list">
+                            <label class="item item-select">
+                                <span class="input-label">
+                                    <p>Kecamatan</p>
+                                </span>
+                                <select ng-model="formData.id_kec" ng-change="getIdKecamatan()">
+                                    <option ng-repeat="data in dataKecamatan | orderBy:'nama'" value="{{data.id}}">
+                                    {{data.nama}}
+                                    </option>
+                                </select>
+                            </label>
+                            <label class="item item-select" id="registrasi-jenistempat">
+                                <span class="input-label">
+                                    <p>Jenis Tempat Tugas</p>
+                                </span>
+                                <select  ng-model="formData.jenis_tempatTugas" ng-change="getJenistempatTugas()">
+                                    <option value="Sekolah">Sekolah</option>
+                                    <option value="Disdikpora">Disdikpora</option>
+                                </select>
+                            </label>
+                            <label class="item item-select" id="registrasi-select8" ng-show="jenjang">
+                                <span class="input-label">
+                                    <p>Jenjang</p>
+                                </span>
+                                <select ng-model="formData.jenjangSekolah" ng-change="getJenjangSekolah()">
+                                    <option value="PAUD/TK">PAUD/TK</option>
+                                    <option value="SD">SD</option>
+                                    <option value="SMP">SMP</option>
+                                    <option value="SNPF SKB">SPNF SKB</option>
+                                    <option value="PKBM">PKBM</option>
+                                </select>
+                            </label>
+                            <label class="item item-select" id="registrasi-select8" ng-show="jenjang">
+                                <span class="input-label">
+                                    <p>Status Sekolah</p>
+                                </span>
+                                <select ng-model="formData.statusSekolah">
+                                    <option value="NEGERI">Negeri</option>
+                                    <option value="SWASTA">Swasta</option>
+                                </select>
+                            </label>
+                            <label class="item item-select" id="registrasi-select9">
+                                <span class="input-label">
+                                    <p>Tempat Tugas</p>
+                                </span>
+                                <select ng-model="formData.idTempatTugas">
+                                    <option ng-repeat="data in dataSekolah | orderBy:'sekolah'" value="{{data.id_sekolah}}">
+                                        {{data.sekolah}}</option>
+                                    <option value="Disdikpora Kab Buleleng">Disdikpora Kab Buleleng</option>
+                                </select>
+                            </label>
+                            <label class="item item-select" id="registrasi-select10">
+                                <span class="input-label">
+                                    <p>Status Jabatan</p>
+                                </span>
+                                <select ng-model="formData.status_jabatan">
+                                    <!-- Satuan Pendidikan -->
+                                    <option ng-show="pejabatsekolah">Pengawas Sekolah</option>
+                                    <option ng-show="pejabatsekolah">Kepala Sekolah</option>
+                                    <option ng-show="pejabatsekolah">Guru</option>
+                                    <option ng-show="pejabatsekolah">Tenaga Administrasi</option>
+                                    <option ng-show="pejabatsekolah">Laboran</option>
+                                    <option ng-show="pejabatsekolah">Pustakawan</option>
+                                    <option ng-show="pejabatsekolah">Tenaga Lainnya</option>
+                                    <!-- Korwil -->
+                                    <option ng-show="jabatanKorwil">Pengawas Sekolah</option>
+                                    <option ng-show="jabatanKorwil">ASN Lainnya</option>
+                                    <!-- Disdikpora -->
+                                    <option ng-show="pegawaidisdik">Struktural Eselon II</option>
+                                    <option ng-show="pegawaidisdik">Struktural Eselon III</option>
+                                    <option ng-show="pegawaidisdik">Struktural Eselon IV</option>
+                                    <option ng-show="pegawaidisdik">Pengawas SD</option>
+                                    <option ng-show="pegawaidisdik">Pengawas SMP</option>
+                                    <option ng-show="pegawaidisdik">Penilik PAUD/TK</option>
+                                    <option ng-show="pegawaidisdik">Penilik PNF</option>
+                                    <option ng-show="pegawaidisdik">Pamong</option>
+                                    <option ng-show="pegawaidisdik">Tatausaha</option>
+                                    <option ng-show="pegawaidisdik">Fungsional Umum</option>
+                                    <option ng-show="pegawaidisdik">Laboran</option>
+                                    <option ng-show="pegawaidisdik">Pustakawan</option>
+                                    <option ng-show="pegawaidisdik">Lain - lain</option>
+                                </select>
+                            </label>
+                          </div>
+
+                      
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

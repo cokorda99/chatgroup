@@ -1,0 +1,28 @@
+<ion-view title="Kartu Vaksin" id="berandaGuru" class="latar">
+    <ion-content padding="false" class="bg-latar bg-watermark">
+      <div class="list card">
+        <div class="item item-avatar">
+          <img src="img/logo.png" ng-if="fotoProfil === false">
+          <img src="{{fotoProfilUrl}}" ng-if="fotoProfil === true">
+          <h2>{{formData.nama}}</h2>
+          <p>{{formData.nik}}</p>
+        </div>
+      </div>
+      <div class="list card">
+        <div class="item item-body">
+          <img class="full-image" src="{{kartuVaksin1}}"ng-click="lihatKartuVaksin1()">
+          <h2 style="text-align: center; margin: auto;">
+            Kartu Vaksin 1
+          </h2>
+        </div>
+      </div>
+      <div class="list card">
+        <div class="item item-body">
+          <img class="full-image" src="{{kartuVaksin2}}" ng-click="lihatKartuVaksin2()">
+          <h2 style="text-align: center;">
+            Kartu Vaksin 2
+          </h2>
+        </div>
+      </div>
+  </ion-content>
+</ion-view>
