@@ -13,6 +13,8 @@ angular.module('app.berandaAdmin', [])
         console.log('USER AKTIF');
         var useraktif = firebase.auth().currentUser;
         console.log(useraktif.uid)
+
+        $scope.userId = useraktif.uid;
         $ionicLoading.hide();
         var dbRef = firebase.database();
         var pengguna = dbRef.ref('users');
@@ -22,6 +24,17 @@ angular.module('app.berandaAdmin', [])
             $scope.formData.nama = snapshot.val().nama;
             $scope.formData.email = snapshot.val().email;
             // console.log($scope.formData.nama);
+
+            var ref = firebase.database().ref("chats");
+            var listRef = $firebaseArray(ref);
+
+            listRef.$loaded().then(function (response) {
+              console.log(response);
+              $scope.chats = response;
+
+            })
+
+
           } else {
             $ionicLoading.hide();
             console.log('TIDAK AKTIF');
@@ -50,15 +63,41 @@ angular.module('app.berandaAdmin', [])
           return formatLengkap;
         }
 
+        $scope.getColor = function () {
+          var color;
+
+          if (useraktif.uid == '5J1DNdYynrgS9jt0EmrwMxaIFb23') {
+            color = 'biru';
+          } else if (useraktif.uid == 'OK9QZKhdjPcqlfam9Xxvh3LNXo12') {
+            color = 'ungu';
+          } else if (useraktif.uid == 'V0kKFUtMZ8POwE5bu0mYtOUcJmm1') {
+            color = 'maroon';
+          } else if (useraktif.uid == 'fOhWXHJRe6W8v5ztnPVWKUOaAkw1') {
+            color = 'hijau';
+          } else{
+            color = '-';
+          }
+
+          return color;
+        }
+
         $scope.sendMessage = function () {
-          console.log($scope.formData.message);
+          // console.log($scope.formData.message);
           var waktu = $scope.getWaktu();
+          var color = $scope.getColor();
           firebase.database().ref('chats/').push({
             text: $scope.formData.message,
-            pengirimId : useraktif.uid,
-            pengirimNama : $scope.formData.nama,
-            waktu : waktu,
-          })
+            pengirimId: useraktif.uid,
+            pengirimNama: $scope.formData.nama,
+            waktu: waktu,
+            color: color,
+          }).then(function () {
+            console.log('clear')
+            // Clear the input field after submitting
+            document.getElementById('inputtext').value= null;
+
+          });
+
         }
 
         $scope.logout = function () {

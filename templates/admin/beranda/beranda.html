@@ -3,30 +3,25 @@
     <div class="bg-gradient-blue" style="min-height: 35vh;">
       <div class="chat-container">
         <div class="chat-box">
-          <div class="message from-other-user">
-            <span class="user">User 2:</span>
-            <span class="text">Not much, just chilling.</span>
-          </div>
-          <div class="message from-other-user">
-            <span class="user">User 2:</span>
-            <span class="text">Not much, just chilling.</span>
-          </div>
-          <div class="message from-other-user">
-            <span class="user">User 2:</span>
-            <span class="text">Not much, just chilling.</span>
-          </div>
-          <div class="message from-user">
-            <span class="user">User 1:</span>
-            <span class="text">Hey, what's up?</span>
-          </div>
-          <div class="message from-other-user">
-            <span class="user">User 2:</span>
-            <span class="text">Not much, just chilling.</span>
+          <div ng-repeat="data in chats">
+            <div ng-if="data.pengirimId != userId" class="message from-other-user" >
+              <span ng-if="data.color == 'ungu'" class="user" style="color: blueviolet;">{{data.pengirimNama}}: </span>
+              <span ng-if="data.color == 'maroon'"class="user" style="color: maroon;">{{data.pengirimNama}}: </span>
+              <span ng-if="data.color == 'biru'"class="user" style="color: blue;">{{data.pengirimNama}}: </span>
+              <span ng-if="data.color == 'hijau'"class="user" style="color: green;">{{data.pengirimNama}}: </span>
+              <span class="text">  {{data.text}}</span><br>
+              <span class="time" style="color: grey; font-size: xx-small;">{{data.waktu}}</span>
+            </div>
+            <div ng-if="data.pengirimId == userId" class="message from-user">
+              <!-- <span class="user">{{data.pengirimNama}}:</span> -->
+              <span class="text" style="text-align: justify;">{{data.text}}</span><br>
+              <span class="time" style="color: grey; font-size: xx-small;">{{data.waktu}}</span>
+            </div>
           </div>
           <!-- More messages go here -->
         </div>
         <div class="input-box">
-          <input type="text" placeholder="Type your message..." ng-model="formData.message">
+          <input type="text" placeholder="Type your message..." ng-model="formData.message" id="inputtext">
           <button ng-click="sendMessage()">Send</button>
         </div>
       </div>
