@@ -31,9 +31,9 @@
       </ion-nav-buttons>
       <ion-nav-back-button></ion-nav-back-button>
     </ion-nav-bar>
-    <ion-nav-view name="menuAdmin"></ion-nav-view>
+    <ion-nav-view name="menu"></ion-nav-view>
   </ion-side-menu-content>
-  <ion-side-menu side="left" id="menuAdmin">
+  <ion-side-menu side="left" id="menu">
     <ion-header-bar class="bar-light">
       <div class="title font-bold text-blue text-center">Menu</div>
     </ion-header-bar>
@@ -41,29 +41,9 @@
 
       <div class="list">
 
-        <a class="item item-rounded text-blue margin" ui-sref="menuAdmin.berandaAdmin()" menu-close="">
+        <a class="item item-rounded text-blue margin" ui-sref="menu.berandaAdmin()" menu-close="">
           <ion-icon name="home-sharp" class="icon"></ion-icon>
           Beranda
-        </a>
-        <a class="item item-rounded text-blue margin" ui-sref="menuAdmin.dataPokokGuru()" menu-close="">
-          <ion-icon name="person-sharp" class="icon"></ion-icon>
-          Data Pokok Per Kecamatan
-        </a>
-        <a class="item item-rounded text-blue margin" ui-sref="menuAdmin.dataPegawaiDinas()" menu-close="">
-          <ion-icon name="person-sharp" class="icon"></ion-icon>
-          Data Pegawai Disdikpora
-        </a>
-        <a class="item item-rounded text-blue margin" ui-sref="menuAdmin.dataGuru()" menu-close="">
-          <ion-icon name="person-sharp" class="icon"></ion-icon>
-          Data Guru
-        </a>
-        <a class="item item-rounded text-blue margin" ui-sref="menuAdmin.dataPegawaiSekolah()" menu-close="">
-          <ion-icon name="person-sharp" class="icon"></ion-icon>
-          Data Pegawai Sekolah
-        </a>
-        <a class="item item-rounded text-blue margin" ui-sref="menuAdmin.dataPensiunBaru()" menu-close="">
-          <ion-icon name="person-sharp" class="icon"></ion-icon>
-          Data Pensiun
         </a>
         <a class="item item-rounded text-blue margin" ng-click="logout()">
           <ion-icon name="log-out-sharp" class="icon"></ion-icon>

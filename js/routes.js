@@ -15,22 +15,22 @@ angular.module('app.routes', [])
       })
 
       // Admin
-      .state('menuAdmin', {
+      .state('menu', {
         url: '/admin',
-        templateUrl: 'templates/admin/menuAdmin.html',
-        controller: 'menuAdminCtrl'
+        templateUrl: 'templates/admin/menu.html',
+        controller: 'menuCtrl'
       })
 
-      .state('menuAdmin.berandaAdmin', {
+      .state('menu.berandaAdmin', {
         url: '/berandaAdmin',
         views: {
-          'menuAdmin': {
+          'menu': {
             templateUrl: 'templates/admin/beranda/beranda.html',
             controller: 'berandaAdminCtrl'
           }
         }
       })
-      
+
     $urlRouterProvider.otherwise('/welcome')
 
 

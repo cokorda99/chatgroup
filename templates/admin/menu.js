@@ -1,6 +1,6 @@
-angular.module('app.menuAdmin', [])
+angular.module('app.menu', [])
 
-    .controller('menuAdminCtrl', ['$scope', '$stateParams', '$firebaseArray', '$firebaseObject', '$ionicPopup', '$ionicLoading', '$state', '$ionicModal', '$ionicActionSheet', '$timeout', '$filter', '$http', function ($scope, $stateParams, $firebaseArray, $firebaseObject, $ionicPopup, $ionicLoading, $state, $ionicModal, $ionicActionSheet, $timeout, $filter, $http) {
+    .controller('menuCtrl', ['$scope', '$stateParams', '$firebaseArray', '$firebaseObject', '$ionicPopup', '$ionicLoading', '$state', '$ionicModal', '$ionicActionSheet', '$timeout', '$filter', '$http', function ($scope, $stateParams, $firebaseArray, $firebaseObject, $ionicPopup, $ionicLoading, $state, $ionicModal, $ionicActionSheet, $timeout, $filter, $http) {
 
         // $ionicLoading.show();
         // firebase.auth().onAuthStateChanged(function (user) {
@@ -13,7 +13,7 @@ angular.module('app.menuAdmin', [])
         //             if(snapshot.val().status == 'guru'){
         //                 $state.go('menuGuru.berandaGuru');
         //             }else{
-        //                 $state.go('menuAdmin.berandaAdmin');
+        //                 $state.go('menu.berandaAdmin');
         //             }   
         //         });
     

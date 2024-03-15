@@ -25,7 +25,7 @@ angular.module('app.berandaAdmin', [])
           } else {
             $ionicLoading.hide();
             console.log('TIDAK AKTIF');
-            $state.go('welcome');
+            // $state.go('welcome');
           }
 
         })
@@ -37,24 +37,24 @@ angular.module('app.berandaAdmin', [])
       else {
         $ionicLoading.hide();
         console.log('TIDAK AKTIF');
-        $state.go('welcome');
+        // $state.go('welcome');
       }
     });
 
     $scope.lihatdataPokok = function () {
-      $state.go('menuAdmin.dataPokokGuru');
+      $state.go('menu.dataPokokGuru');
     }
     $scope.lihatdataPegawaiDinas = function () {
-      $state.go('menuAdmin.dataPegawaiDinas');
+      $state.go('menu.dataPegawaiDinas');
     }
     $scope.lihatdataGuru = function () {
-      $state.go('menuAdmin.dataGuru');
+      $state.go('menu.dataGuru');
     }
     $scope.lihatdataPegawaiSekolah = function () {
-      $state.go('menuAdmin.dataPegawaiSekolah');
+      $state.go('menu.dataPegawaiSekolah');
     }
     $scope.lihatdataPensiun = function () {
-      $state.go('menuAdmin.dataPensiunBaru');
+      $state.go('menu.dataPensiunBaru');
     }
     $scope.updateData = function () {
       $ionicLoading.show();
@@ -3936,73 +3936,73 @@ angular.module('app.berandaAdmin', [])
 
     $ionicLoading.show();
     $scope.lihatKecBanjar = function () {
-      $state.go("menuAdmin.dataGuruKec", {
+      $state.go("menu.dataGuruKec", {
         "idKec": "kec-banjar",
       })
     }
 
     $scope.lihatKecBuleleng = function () {
-      $state.go("menuAdmin.dataGuruKec", {
+      $state.go("menu.dataGuruKec", {
         "idKec": "kec-buleleng",
       })
     }
 
     $scope.lihatKecBusungbiu = function () {
-      $state.go("menuAdmin.dataGuruKec", {
+      $state.go("menu.dataGuruKec", {
         "idKec": "kec-busungbiu",
       })
     }
 
     $scope.lihatKecGerokgak = function () {
-      $state.go("menuAdmin.dataGuruKec", {
+      $state.go("menu.dataGuruKec", {
         "idKec": "kec-gerokgak",
       })
     }
 
     $scope.lihatKecKubutambahan = function () {
-      $state.go("menuAdmin.dataGuruKec", {
+      $state.go("menu.dataGuruKec", {
         "idKec": "kec-kubutambahan",
       })
     }
 
     $scope.lihatKecSawan = function () {
-      $state.go("menuAdmin.dataGuruKec", {
+      $state.go("menu.dataGuruKec", {
         "idKec": "kec-sawan",
       })
     }
 
     $scope.lihatKecSeririt = function () {
-      $state.go("menuAdmin.dataGuruKec", {
+      $state.go("menu.dataGuruKec", {
         "idKec": "kec-seririt",
       })
     }
 
     $scope.lihatKecSukasada = function () {
-      $state.go("menuAdmin.dataGuruKec", {
+      $state.go("menu.dataGuruKec", {
         "idKec": "kec-sukasada",
       })
     }
 
     $scope.lihatKecTejakula = function () {
-      $state.go("menuAdmin.dataGuruKec", {
+      $state.go("menu.dataGuruKec", {
         "idKec": "kec-tejakula",
       })
     }
 
     $scope.tahun2021 = function () {
-      $state.go("menuAdmin.dataPensiun", {
+      $state.go("menu.dataPensiun", {
         "tahun": "2021",
       })
     }
 
     $scope.tahun2022 = function () {
-      $state.go("menuAdmin.dataPensiun", {
+      $state.go("menu.dataPensiun", {
         "tahun": "2022",
       })
     }
 
     $scope.tahun2023 = function () {
-      $state.go("menuAdmin.dataPensiun", {
+      $state.go("menu.dataPensiun", {
         "tahun": "2023",
       })
     }
@@ -4729,7 +4729,7 @@ angular.module('app.berandaAdmin', [])
 
 
     $scope.detailGuru = function (data) {
-      $state.go("menuAdmin.detailGuru", {
+      $state.go("menu.detailGuru", {
         "uid": data.$id,
         "idKec": data.id_kec,
       })
@@ -4820,7 +4820,7 @@ angular.module('app.berandaAdmin', [])
 
     $scope.detailGuru = function (data) {
       console.log(data.$id);
-      $state.go("menuAdmin.detailGuru", {
+      $state.go("menu.detailGuru", {
         "id": data.$id,
       })
     }
